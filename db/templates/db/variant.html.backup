@@ -50,16 +50,16 @@ $(document).ready(function()
                             </tr>
                         </thead>
                         <tbody>
-                        {% for p in patient %}
+                        {% for v in vdata %}
                             <tr>
-                                <td>{{ p.name }}</td>
-                                <td>{{ p.age }}</td>
-                                <td>{{ p.id_description.description }}</td>
-                                <td>{{ p.id_stage.stage }}</td>
-                                <td>{{ p.id_platform.platform }}</td>
-                                <td>{{ p.id_variant.cdna }}</td>
-                                <td>{{ p.id_variant.protein }}</td>
-                                <td>{{ p.id_variant.genomic }}</td>
+                                <td>{{ v.name }}</td>
+                                <td>{{ v.age }}</td>
+                                <td>{{ v.description }}</td>
+                                <td>{{ v.stage }}</td>
+                                <td>{{ v.sequencer }}</td>
+                                <td>{{ v.cdna }}</td>
+                                <td>{{ v.protein }}</td>
+                                <td>{{ v.genomic }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>
