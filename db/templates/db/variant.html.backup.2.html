@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BRCA database</title>
+
+        <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/reset.css" />
+         <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/bootstrap-2.3.2.min.css" />
+         <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/application.css" />
+         <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/project.css" />
+         <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/pygments.css" />
+         <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/share.css" />
+         <link href='//fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>
+         <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+         <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/dynatable-docs.css" />
+         <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery-1.9.1.min.js'></script>
+         <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.scrollTo.js'></script>
+         <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.toc.min.js'></script>
+         <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.sharrre-1.2.0.min.js'></script>
+
+         <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/jquery.dynatable.css" />
+         <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
+
+
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.14.min.css"
+    rel="stylesheet" type="text/css">
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.14.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.14.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class='container-fluid'>
+            <div class='jumbotron'>
+                <div class='row'>
+                    <div class='col-sm-12'>
+                        <h1>BRCA Variants</h1>
+                    </div>
+                    <div class='row'>
+                </div>
+            </div>
+        </div>
+
+        <div class='container'>
+            <div class='row'>
+                <div class='col-sm-6'>
+                    {{ type_div|safe }}
+                    {{ type_script|safe }}
+                </div>
+                <div class='col-sm-6'>
+                    {{ stage_div|safe }}
+                    {{ stage_script|safe }}
+                </div>
+            </div>
+        </div>
+
+        <div class='container'>
+            <div class='row'>
+                <div class='col-sm-12'>
+
+                    <table id="myTable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Cancertype</th>
+                                <th>Stage</th>
+                                <th>Sequencer</th>
+                                <th>cdna</th>
+                                <th>Protein</th>
+                                <th>Genomic</th>
+                            </tr>
+                        </thead>
+                        {% for p in patient %}
+                            <tr>
+                                <td>{{ p.name }}</td>
+                                <td>{{ p.age }}</td>
+                                <td>{{ p.id_description.description }}</td>
+                                <td>{{ p.id_stage.stage }}</td>
+                                <td>{{ p.id_platform.platform }}</td>
+                                <td>{{ p.id_variant.cdna }}</td>
+                                <td>{{ p.id_variant.protein }}</td>
+                                <td>{{ p.id_variant.genomic }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+            <script>$("#myTable").dynatable();</script>
+    </body>
+</html>
+
+

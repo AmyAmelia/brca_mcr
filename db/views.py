@@ -8,6 +8,8 @@ from bokeh.plotting import figure
 from bokeh.transform import factor_cmap
 from bokeh.resources import CDN
 from bokeh.embed import components
+from math import pi
+from bokeh.palettes import *
 
 
 def home(request):
@@ -34,26 +36,30 @@ def variant(request):
 
     # plots - type
     type_source = ColumnDataSource(data=dict(types=types, counts=type_counts))
-    type_p = figure(x_range=types, plot_height=300, plot_width=500, toolbar_location=None, title="Number of cases")
+    type_p = figure(x_range=types, plot_height=300, plot_width=500, toolbar_location=None, title="Number of variants per cancer type")
     type_p.vbar(x='types', top='counts', width=0.9, source=type_source,
-           line_color='white', fill_color=factor_cmap('types', palette=['#084594', '#2171b5', '#4292c6', '#6baed6', '#9ecae1', '#c6dbef', '#deebf7', '#f7fbff'], factors=types))
+           line_color='white', fill_color=factor_cmap('types', palette=['#5f27cd','#54a0ff','#00d2d3','#48dbfb','#ff6b6b','#1dd1a1','#feca57','#ff9ff3'], factors=types))
     type_p.xgrid.grid_line_color = None
     type_p.y_range.start = 0
-    type_p.y_range.end = 15
+    type_p.y_range.end = 16
     type_p.legend.orientation = "horizontal"
     type_p.legend.location = "top_center"
+    type_p.xaxis.major_label_orientation = pi/4
+    type_p.yaxis.axis_label='Frequency'
     type_script, type_div = components(type_p, CDN)
 
     # plots - stage
-    stage_source = ColumnDataSource(data=dict(types=stages, counts=stage_counts))
-    stage_p = figure(x_range=stages, plot_height=300, plot_width=500, toolbar_location=None, title="Number of cases")
+    stage_source = ColumnDataSource(data=dict(types=stages_num, counts=stage_counts))
+    stage_p = figure(x_range=stages_num, plot_height=242, plot_width=300, toolbar_location=None, title="Number of variants per cancer stage")
     stage_p.vbar(x='types', top='counts', width=0.9, source=stage_source,
-           line_color='white', fill_color=factor_cmap('types', palette=['#084594', '#2171b5', '#4292c6', '#6baed6', '#9ecae1', '#c6dbef', '#deebf7', '#f7fbff'], factors=types))
+           line_color='white', fill_color=factor_cmap('types', palette=['#f1c40f','#e67e22','#e74c3c'], factors=stages_num))
     stage_p.xgrid.grid_line_color = None
     stage_p.y_range.start = 0
     stage_p.y_range.end = 40
     stage_p.legend.orientation = "horizontal"
     stage_p.legend.location = "top_center"
+    stage_p.xaxis.major_label_orientation = pi/4
+    stage_p.yaxis.axis_label='Frequency'
     stage_script, stage_div = components(stage_p, CDN)
 
     return render(request, 'db/variant.html', {'patient': patient, 'type_counts': type_counts, 'stage_counts': stage_counts, 'type_script':type_script, 'type_div':type_div, 'stage_script':stage_script, 'stage_div':stage_div})
