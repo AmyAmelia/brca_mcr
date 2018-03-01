@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bokeh Plot</title>
+        
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.14.min.css" type="text/css" />
+        
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.14.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+    </head>
+    <body>
+        
+        <div class="bk-root">
+            <div class="bk-plotdiv" id="d59b7c7e-a79e-455a-a871-1ac7ad7f3d27"></div>
+        </div>
+        
+        <script type="application/json" id="46dfb264-0742-4ab0-ae62-6be99f9eb218">
+          {"a4c461fc-48eb-40fe-8e15-fe2efea64957":{"roots":{"references":[{"attributes":{"callback":null,"end":15,"start":0},"id":"2f637111-70c9-4d94-9ebd-753af12590f6","type":"DataRange1d"},{"attributes":{},"id":"2d3c61b0-ca45-439e-85c7-789d029a7f50","type":"BasicTicker"},{"attributes":{},"id":"38b0989d-2a4e-4d76-82a1-a41059aae9ce","type":"LinearScale"},{"attributes":{"plot":null,"text":"Number of cases"},"id":"d2644248-60a6-412b-8649-7cd4f53fd9fb","type":"Title"},{"attributes":{"formatter":{"id":"2e8d280e-fa52-4ae9-b41d-daae168ed490","type":"BasicTickFormatter"},"plot":{"id":"68420c2d-6c01-4b85-a776-7f5ac4002727","subtype":"Figure","type":"Plot"},"ticker":{"id":"2d3c61b0-ca45-439e-85c7-789d029a7f50","type":"BasicTicker"}},"id":"11befc67-2c0f-4f47-9f8c-03caea90650f","type":"LinearAxis"},{"attributes":{"formatter":{"id":"abdab4e1-f898-4276-aa91-7b70b65ee382","type":"CategoricalTickFormatter"},"plot":{"id":"68420c2d-6c01-4b85-a776-7f5ac4002727","subtype":"Figure","type":"Plot"},"ticker":{"id":"dcca96c1-d009-4701-b437-ed436feef8d3","type":"CategoricalTicker"}},"id":"af2d0665-536f-47a0-b469-656ed6729272","type":"CategoricalAxis"},{"attributes":{},"id":"dcca96c1-d009-4701-b437-ed436feef8d3","type":"CategoricalTicker"},{"attributes":{"callback":null,"factors":[" Mucinous"," Mixed_type"," Tubular"," Invasive_lobular"," Medullary"," Invasive_ductal"," Papillary"," Other"]},"id":"6f493d11-34ea-4335-a035-3e46e07d2ae6","type":"FactorRange"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"68420c2d-6c01-4b85-a776-7f5ac4002727","subtype":"Figure","type":"Plot"},"ticker":{"id":"dcca96c1-d009-4701-b437-ed436feef8d3","type":"CategoricalTicker"}},"id":"910c90e1-cbac-4c8c-a86b-dd86169c9fcb","type":"Grid"},{"attributes":{"dimension":1,"plot":{"id":"68420c2d-6c01-4b85-a776-7f5ac4002727","subtype":"Figure","type":"Plot"},"ticker":{"id":"2d3c61b0-ca45-439e-85c7-789d029a7f50","type":"BasicTicker"}},"id":"a3778eab-c0a7-4561-b297-522802ebd8c2","type":"Grid"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"counts"},"width":{"value":0.9},"x":{"field":"types"}},"id":"cc4a75f2-683e-4aef-aaa6-f28d9b786bc0","type":"VBar"},{"attributes":{"data_source":{"id":"84c1c919-f69d-4588-8a9c-bad49f7277c6","type":"ColumnDataSource"},"glyph":{"id":"41c224c0-e1e0-41b9-a8c0-0870c842f6e5","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"cc4a75f2-683e-4aef-aaa6-f28d9b786bc0","type":"VBar"},"selection_glyph":null,"view":{"id":"10abc137-6fb8-437c-8c8c-c357e280ebba","type":"CDSView"}},"id":"b88187b8-0396-44aa-84d0-37f6ff1ca9d1","type":"GlyphRenderer"},{"attributes":{"source":{"id":"84c1c919-f69d-4588-8a9c-bad49f7277c6","type":"ColumnDataSource"}},"id":"10abc137-6fb8-437c-8c8c-c357e280ebba","type":"CDSView"},{"attributes":{},"id":"14d6407b-809b-4ef8-919b-455e602c06cb","type":"PanTool"},{"attributes":{},"id":"4f2b4eda-2ec6-451c-82ac-4cc81f1cefbd","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"a0e6bf03-aa8e-407f-89f3-442443e7c7cb","type":"BoxAnnotation"}},"id":"6e7738e5-2a5a-469b-b953-bf237c21ba72","type":"BoxZoomTool"},{"attributes":{},"id":"15853e3a-7ea1-4ec6-bf2e-64f959a57131","type":"SaveTool"},{"attributes":{},"id":"4f653ca9-73b3-4685-b74d-5af1fbcab775","type":"ResetTool"},{"attributes":{"factors":[" Mucinous"," Mixed_type"," Tubular"," Invasive_lobular"," Medullary"," Invasive_ductal"," Papillary"," Other"],"palette":["#084594","#2171b5","#4292c6","#6baed6","#9ecae1","#c6dbef","#deebf7","#f7fbff"]},"id":"d235935b-1648-4f10-a8ce-2b35ad7743e8","type":"CategoricalColorMapper"},{"attributes":{},"id":"76f5ac22-af7e-469d-b0f9-142a4f0b6e9f","type":"HelpTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"a0e6bf03-aa8e-407f-89f3-442443e7c7cb","type":"BoxAnnotation"},{"attributes":{"below":[{"id":"af2d0665-536f-47a0-b469-656ed6729272","type":"CategoricalAxis"}],"left":[{"id":"11befc67-2c0f-4f47-9f8c-03caea90650f","type":"LinearAxis"}],"plot_height":350,"renderers":[{"id":"af2d0665-536f-47a0-b469-656ed6729272","type":"CategoricalAxis"},{"id":"910c90e1-cbac-4c8c-a86b-dd86169c9fcb","type":"Grid"},{"id":"11befc67-2c0f-4f47-9f8c-03caea90650f","type":"LinearAxis"},{"id":"a3778eab-c0a7-4561-b297-522802ebd8c2","type":"Grid"},{"id":"a0e6bf03-aa8e-407f-89f3-442443e7c7cb","type":"BoxAnnotation"},{"id":"b88187b8-0396-44aa-84d0-37f6ff1ca9d1","type":"GlyphRenderer"}],"title":{"id":"d2644248-60a6-412b-8649-7cd4f53fd9fb","type":"Title"},"toolbar":{"id":"ccbd8b7d-6997-4dcb-a8f0-4b7468383e14","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"6f493d11-34ea-4335-a035-3e46e07d2ae6","type":"FactorRange"},"x_scale":{"id":"183827ce-7d13-40ce-ab9f-998e0b3b8d53","type":"CategoricalScale"},"y_range":{"id":"2f637111-70c9-4d94-9ebd-753af12590f6","type":"DataRange1d"},"y_scale":{"id":"38b0989d-2a4e-4d76-82a1-a41059aae9ce","type":"LinearScale"}},"id":"68420c2d-6c01-4b85-a776-7f5ac4002727","subtype":"Figure","type":"Plot"},{"attributes":{"fill_color":{"field":"types","transform":{"id":"d235935b-1648-4f10-a8ce-2b35ad7743e8","type":"CategoricalColorMapper"}},"line_color":{"value":"white"},"top":{"field":"counts"},"width":{"value":0.9},"x":{"field":"types"}},"id":"41c224c0-e1e0-41b9-a8c0-0870c842f6e5","type":"VBar"},{"attributes":{},"id":"abdab4e1-f898-4276-aa91-7b70b65ee382","type":"CategoricalTickFormatter"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"id":"14d6407b-809b-4ef8-919b-455e602c06cb","type":"PanTool"},{"id":"4f2b4eda-2ec6-451c-82ac-4cc81f1cefbd","type":"WheelZoomTool"},{"id":"6e7738e5-2a5a-469b-b953-bf237c21ba72","type":"BoxZoomTool"},{"id":"15853e3a-7ea1-4ec6-bf2e-64f959a57131","type":"SaveTool"},{"id":"4f653ca9-73b3-4685-b74d-5af1fbcab775","type":"ResetTool"},{"id":"76f5ac22-af7e-469d-b0f9-142a4f0b6e9f","type":"HelpTool"}]},"id":"ccbd8b7d-6997-4dcb-a8f0-4b7468383e14","type":"Toolbar"},{"attributes":{},"id":"2e8d280e-fa52-4ae9-b41d-daae168ed490","type":"BasicTickFormatter"},{"attributes":{"callback":null,"column_names":["types","counts"],"data":{"counts":[12,13,13,13,12,12,12,13],"types":[" Mucinous"," Mixed_type"," Tubular"," Invasive_lobular"," Medullary"," Invasive_ductal"," Papillary"," Other"]}},"id":"84c1c919-f69d-4588-8a9c-bad49f7277c6","type":"ColumnDataSource"},{"attributes":{},"id":"183827ce-7d13-40ce-ab9f-998e0b3b8d53","type":"CategoricalScale"}],"root_ids":["68420c2d-6c01-4b85-a776-7f5ac4002727"]},"title":"Bokeh Application","version":"0.12.14"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('46dfb264-0742-4ab0-ae62-6be99f9eb218').textContent;
+                  var render_items = [{"docid":"a4c461fc-48eb-40fe-8e15-fe2efea64957","elementid":"d59b7c7e-a79e-455a-a871-1ac7ad7f3d27","modelid":"68420c2d-6c01-4b85-a776-7f5ac4002727"}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing")
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    </body>
+</html>

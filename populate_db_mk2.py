@@ -7,9 +7,10 @@ for i in range(df.shape[0]):
     # populate Sequencer/Platform
     existing, created = Platform.objects.get_or_create(platform=df.iloc[i]['Sequencer'])
 
+d_stage = {1:'one', 2:'two', 3:'three'}
 for i in range(df.shape[0]):
     # populate Stage
-    existing, created = Stage.objects.get_or_create(stage=df.iloc[i]['Stage'])
+    existing, created = Stage.objects.get_or_create(stage=df.iloc[i]['Stage'], stage_str=d_stage[df.iloc[i]['Stage']])
 
 for i in range(df.shape[0]):
     # populate Description

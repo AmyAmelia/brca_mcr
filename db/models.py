@@ -17,7 +17,8 @@ class Patient(models.Model):
 
 class Stage(models.Model):
     id_stage = models.AutoField(primary_key=True)
-    stage = models.IntegerField(null=True, unique=True)
+    stage = models.CharField(max_length=3, null=True, unique=True)
+    stage_str = models.CharField(max_length=10, null=True, unique=True)
     class Meta:
         db_table = 'stage'
     def __unicode__(self):
