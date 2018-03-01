@@ -1,0 +1,53 @@
+{% extends 'db/base.html' %}
+
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+{% block extrahead %}
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.5.min.css"
+    rel="stylesheet" type="text/css">
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.5.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+    <div class='row'>
+
+        <div class='col-sm-12'>
+            <h3>Variants - meow!</h3>
+        </div>
+
+        <div class='row'>
+            <div class='col-sm-12'>
+                <div class='well'>
+                    <h4>Tables of records of BRCA variants.</h4>
+                </div>
+            </div>
+        </div>
+    <div class='row'>
+        <div>
+            <h4>NextSeq runs with clusters over threshold - {{ total_nextseq_over }}</h4>
+            <table class='table table-striped'>
+                <tr class='info'>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                {% for p in patient %}
+                <tr>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.age }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    <h3>boop</h3>
+
+{% endblock %}

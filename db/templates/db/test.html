@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BRCA database</title>
+
+    </head>
+
+    <body>
+        {{ thing }}
+
+        <table class='table'>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Description</th>
+        <th>Stage</th>
+        <th>Sequencer</th>
+        <th>cDNA</th>
+        <th>Protein</th>
+        <th>Genomic</th>
+    </tr>
+{% for v in vdata %}
+    <tr>
+        <td>{{ v.name }}</td>
+        <td>{{ v.age }}</td>
+        <td>{{ v.description }}</td>
+        <td>{{ v.stage }}</td>
+        <td>{{ v.sequencer }}</td>
+        <td>{{ v.cdna }}</td>
+        <td>{{ v.protein }}</td>
+        <td>{{ v.genomic }}</td>
+
+    </tr>
+{% endfor %}
+</table>
+
+    </body>
+</html>
