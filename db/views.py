@@ -41,7 +41,7 @@ def variant(request):
            line_color='white', fill_color=factor_cmap('types', palette=['#5f27cd','#54a0ff','#00d2d3','#48dbfb','#ff6b6b','#1dd1a1','#feca57','#ff9ff3'], factors=types))
     type_p.xgrid.grid_line_color = None
     type_p.y_range.start = 0
-    type_p.y_range.end = 16
+    type_p.y_range.end = 1.1*max(type_counts)
     type_p.legend.orientation = "horizontal"
     type_p.legend.location = "top_center"
     type_p.xaxis.major_label_orientation = pi/4
@@ -55,7 +55,7 @@ def variant(request):
            line_color='white', fill_color=factor_cmap('types', palette=['#f1c40f','#e67e22','#e74c3c'], factors=stages_num))
     stage_p.xgrid.grid_line_color = None
     stage_p.y_range.start = 0
-    stage_p.y_range.end = 40
+    stage_p.y_range.end = 1.1*max(stage_counts)
     stage_p.legend.orientation = "horizontal"
     stage_p.legend.location = "top_center"
     stage_p.xaxis.major_label_orientation = pi/4
