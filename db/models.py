@@ -42,17 +42,6 @@ class Platform(models.Model):
     def __unicode__(self):
         return u'{0}'.format(self.platform)
         
-# class Annotation(models.Model):
-#     id_annotation = models.AutoField(primary_key=True)
-#     id_variant = models.ForeignKey('Variant', on_delete=models.CASCADE, db_column='id_variant', null=True)
-#     rsid =  models.CharField(max_length=100, unique=False)
-#     polyphen = models.CharField(max_length=100, unique=False)
-#     sift = models.CharField(max_length=100, unique=False)
-#     gnomad_af = models.CharField(max_length=100, unique=False)
-#     class Meta:
-#         db_table = 'annotation'
-#     def __unicode__(self):
-#         return u'{0}'.format(self.cdna)
 
 
 class Variant(models.Model):
