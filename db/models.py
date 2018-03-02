@@ -41,6 +41,18 @@ class Platform(models.Model):
         db_table = 'platform'
     def __unicode__(self):
         return u'{0}'.format(self.platform)
+        
+# class Annotation(models.Model):
+#     id_annotation = models.AutoField(primary_key=True)
+#     id_variant = models.ForeignKey('Variant', on_delete=models.CASCADE, db_column='id_variant', null=True)
+#     rsid =  models.CharField(max_length=100, unique=False)
+#     polyphen = models.CharField(max_length=100, unique=False)
+#     sift = models.CharField(max_length=100, unique=False)
+#     gnomad_af = models.CharField(max_length=100, unique=False)
+#     class Meta:
+#         db_table = 'annotation'
+#     def __unicode__(self):
+#         return u'{0}'.format(self.cdna)
 
 
 class Variant(models.Model):
@@ -48,6 +60,10 @@ class Variant(models.Model):
     cdna = models.CharField(max_length=100, unique=False)
     protein = models.CharField(max_length=100, unique=False)
     genomic = models.CharField(max_length=100, unique=False)
+    rsid =  models.CharField(max_length=100, null=True, unique=False)
+    polyphen = models.CharField(max_length=100,null=True,  unique=False)
+    sift = models.CharField(max_length=100, null=True, unique=False)
+    gnomad_af = models.CharField(max_length=100, null=True, unique=False)
     class Meta:
         db_table = 'variant'
     def __unicode__(self):

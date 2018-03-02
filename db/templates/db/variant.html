@@ -36,6 +36,8 @@ $(document).ready(function()
                 <div class='row'>
                     <div class='col-sm-12'>
                         <h1>BRCA Variants</h1>
+                        <h3>Transcript: NM_007294 <h3>
+                        <h3>Build: Grch37 <h3>
                     </div>
                     <div class='row'>
                 </div>
@@ -70,6 +72,10 @@ $(document).ready(function()
                                 <th>cDNA</th>
                                 <th>Protein</th>
                                 <th>Genomic</th>
+                                <th>rsID<th> 
+                                <th>Pholyphen<th>
+                                <th>Sift<th> 
+                                <th>MAF Gnomad<th>  
                             </tr>
                         </thead>
                         <tbody>
@@ -83,6 +89,10 @@ $(document).ready(function()
                                 <td>{{ p.id_variant.cdna }}</td>
                                 <td>{{ p.id_variant.protein }}</td>
                                 <td>{{ p.id_variant.genomic }}</td>
+                                <td>{{p.id_variant.rsid}}<td>
+                                <td>{{p.id_variant.polyphen}}<td>
+                                <td>{{p.id_variant.sift}}<td>
+                                <td>{{p.id_variant.gnomad_af}}<td>
                             </tr>
                         {% endfor %}
                         </tbody>

@@ -6,3 +6,5 @@ admin.site.register(Stage)
 admin.site.register(Platform)
 admin.site.register(Variant)
 admin.site.register(Patient)
+# admin.site.register(Annotation)
+
