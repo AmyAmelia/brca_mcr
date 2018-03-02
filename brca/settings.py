@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'brca.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'brca',
+        'NAME': 'brca_v2',
         'USER': 'stp',
         'PASSWORD': 'tiger',
         'HOST': 'localhost',

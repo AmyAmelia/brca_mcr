@@ -48,6 +48,10 @@ class Variant(models.Model):
     cdna = models.CharField(max_length=100, unique=False)
     protein = models.CharField(max_length=100, unique=False)
     genomic = models.CharField(max_length=100, unique=False)
+    rsid =  models.CharField(max_length=100, null=True, unique=False)
+    polyphen = models.CharField(max_length=100,null=True,  unique=False)
+    sift = models.CharField(max_length=100, null=True, unique=False)
+    gnomad_af = models.CharField(max_length=100, null=True, unique=False)
     class Meta:
         db_table = 'variant'
     def __unicode__(self):

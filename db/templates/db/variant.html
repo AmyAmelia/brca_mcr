@@ -71,6 +71,10 @@
                             <th>cDNA</th>
                             <th>Protein</th>
                             <th>Genomic</th>
+                            <th>rsID</th>
+                            <th>Pholyphen</th>
+                            <th>Sift</th>
+                            <th>MAF Gnomad</th>
                         </tr>
                     </thead>
                     {% for p in patient %}
@@ -83,13 +87,22 @@
                             <td>{{ p.id_variant.cdna }}</td>
                             <td>{{ p.id_variant.protein }}</td>
                             <td>{{ p.id_variant.genomic }}</td>
+                            <td>{{p.id_variant.rsid}}</td>
+                            <td>{{p.id_variant.polyphen}}</td>
+                            <td>{{p.id_variant.sift}}</td>
+                            <td>{{p.id_variant.gnomad_af}}</td>
                         </tr>
                     {% endfor %}
                 </table>
             </div>
         </div>
     </div>
+    <div class='container'>
+        <div class='row'>
+            <a href='kitteh/'><i class="fas fa-paw fa-5x text-success"></i></a>
+            
     <script>$("#myTable").dynatable();</script>
+            
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
